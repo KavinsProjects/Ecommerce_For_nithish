@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Store</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { width: 80%; margin: auto; text-align: center; }
+        .product { display: inline-block; margin: 20px; padding: 10px; border: 1px solid #ddd; }
+        img { width: 150px; height: 150px; object-fit: cover; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Our Store</h1>
+        {% for product in products %}
+            <div class="product">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                <h3>{{ product.name }}</h3>
+                <p>Price: ₹{{ product.price }}</p>
+                <button>Add to Cart</button>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
